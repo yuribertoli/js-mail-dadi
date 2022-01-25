@@ -15,7 +15,8 @@ for (let i=0; i<mails.length; i++) {
 
         alert("La mail inserita " + mails[i] + " è presente nel sistema, puoi accedere al sito e giocare a dadi");
         controllo = true; //aggiorno variabile di controllo
-        break;  
+        break;
+
     } 
 
 }
@@ -45,14 +46,14 @@ if (controllo != true) {
             controllo2 = true;            
             break;
 
-        } 
+        }
         
     }
     
     //Se ancora non combacia mostra segnale di errore
     if (controllo2 != true) {
 
-        alert("Le email che hai inserito non combaciano. Riaggiorna la pagina e riprova");
+        alert("Le email che hai inserito non combaciano. Riaggiorna la pagina per registrarti correttamente");
             
     }
 
@@ -64,41 +65,34 @@ if (controllo != true) {
 //Definisco la variabile dado
 let dado = document.querySelector("button");
 
-//Se l'utente non inserisce la mail segnalo errore
-if (controllo2 != true) {
+//Aggiungo evento al click del bottone
+dado.addEventListener("click",
 
-    dado.innerHTML = "NON PUOI GIOCARE";
+    function() {
 
-} else { //Se l'utente ha inserito la mail aggiungo un evento al verificarsi del click 
+        //Definisco 2 numeri compresi tra 1 e 6
+        let numeroGiocatore = (Math.floor(Math.random() * 6) + 1);
+        let numeroComputer = (Math.floor(Math.random() * 6) + 1);
 
-    dado.addEventListener("click",
+        //Definisco le condizioni di vittoria
+        if (numeroGiocatore > numeroComputer) {
 
-        function() {
-
-            //Definisco 2 numeri compresi tra 1 e 6
-            let numeroGiocatore = (Math.floor(Math.random() * 6) + 1);
-            let numeroComputer = (Math.floor(Math.random() * 6) + 1);
-
-            //Definisco le condizioni di vittoria
-            if (numeroGiocatore > numeroComputer) {
-
-                alert(`Il tuo numero era ${numeroGiocatore} mentre quello del Computer era ${numeroComputer}, quindi hai vinto!!`);
-            
-            } else if (numeroGiocatore == numeroComputer) {
-
-                alert(`Il tuo numero era ${numeroGiocatore} mentre quello del Computer era ${numeroComputer}, quindi avete pareggiato!!`);
+            alert(`Il tuo numero era ${numeroGiocatore} mentre quello del Computer era ${numeroComputer}, quindi hai vinto!!`);
         
-            } else {
+        } else if (numeroGiocatore == numeroComputer) {
 
-                alert(`Il tuo numero era ${numeroGiocatore} mentre quello del Computer era ${numeroComputer}, quindi hai perso!!`);
-            
-            }
+            alert(`Il tuo numero era ${numeroGiocatore} mentre quello del Computer era ${numeroComputer}, quindi avete pareggiato!!`);
 
+        } else {
+
+            alert(`Il tuo numero era ${numeroGiocatore} mentre quello del Computer era ${numeroComputer}, quindi hai perso!!`);
+        
         }
 
-    )
+    }
 
-}
+)
+    
 
 
 
