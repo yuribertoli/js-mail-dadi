@@ -53,7 +53,8 @@ if (controllo != true) {
     //Se ancora non combacia mostra segnale di errore
     if (controllo2 != true) {
 
-        alert("Le email che hai inserito non combaciano. Riaggiorna la pagina per registrarti correttamente");
+        alert("Le email che hai inserito non combaciano. Riprova per registrarti correttamente");
+        location.reload(); 
             
     }
 
