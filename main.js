@@ -24,7 +24,7 @@ for (let i=0; i<mails.length; i++) {
 //Se il controllo non passa allora non c'è corrispondenza
 if (controllo != true) {
 
-    alert("Non puoi accedere al gioco. Registra la tua mail e riprova");
+    alert("Email non presente, per accedere al gioco registra la tua mail");
 
     //Registro la mail
     let aggiungiMail = prompt("Scrivi la tua mail per registrarti");
