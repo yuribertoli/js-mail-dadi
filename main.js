@@ -5,7 +5,7 @@ const mails = ["pino@gmail.com","aldo@gmail.com","gino@gmail.com"];
 for (let i=0; i<mails.length; i++) {
 
     if (mails[i] == domanda) {
-        alert("La mail inserita " + mails[i] + " è presente nel sistema");
+        alert("La mail inserita " + mails[i] + " è presente nel sistema, puoi accedere al sito e giocare a dadi");
     } 
 
 }
@@ -30,3 +30,29 @@ for (let i=0; i<mails.length; i++) {
 }
 */
 
+let dado = document.querySelector("button");
+
+dado.addEventListener("click",
+
+    function() {
+
+        let numeroGiocatore = (Math.floor(Math.random() * 6) + 1);
+        let numeroComputer = (Math.floor(Math.random() * 6) + 1);
+
+        if (numeroGiocatore > numeroComputer) {
+
+            alert(`Il tuo numero era ${numeroGiocatore} mentre quello del Computer era ${numeroComputer}, quindi hai vinto!!`);
+        
+        } else if (numeroGiocatore == numeroComputer) {
+
+            alert(`Il tuo numero era ${numeroGiocatore} mentre quello del Computer era ${numeroComputer}, quindi avete pareggiato!!`);
+       
+        } else {
+
+            alert(`Il tuo numero era ${numeroGiocatore} mentre quello del Computer era ${numeroComputer}, quindi hai perso!!`);
+        
+        }
+
+    }
+
+)
